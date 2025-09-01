@@ -20,7 +20,7 @@ resource "google_compute_backend_service" "main" {
       capacity_scaler = 1.0
     }
   }
-  
+
 }
 
 resource "google_compute_url_map" "main" {
