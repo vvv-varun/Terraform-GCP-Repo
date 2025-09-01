@@ -60,4 +60,4 @@ jobs:
       uses: 'google-github-actions/auth@v3'
       with:
         credentials_json: ${{ secrets.GCP_CREDENTIALS }}
-        run: echo "This is the output of Apply"
+        run: echo "This is the output of Apply here"
