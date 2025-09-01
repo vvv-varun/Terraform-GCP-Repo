@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
+      TF_VAR_web_bucket: ${{ secrets.WEB_BUCKET }}"
     if: github.event_name == 'pull_request'
 
     steps:
@@ -29,7 +30,7 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init 
+      run: terraform init -backend-config="bucket=${{ secrets.BACKEND_BUCKET }}"
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format

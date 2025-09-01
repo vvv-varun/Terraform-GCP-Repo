@@ -3,11 +3,6 @@ variable "project_id" {
   type        = string
 }
 
-variable "gcp_svc_key" {
-  description = "Service account json key"
-  type        = string
-}
-
 variable "region" {
   description = "List of regions, where region[0] will be the primary region"
   type        = list(string)
@@ -16,6 +11,7 @@ variable "region" {
 
 variable "env" {
   type = string
+  default = "prod"
 }
 
 variable "web_bucket" {
