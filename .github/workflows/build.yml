@@ -4,6 +4,7 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
 
 jobs:
   terraform_plan:
@@ -47,10 +48,11 @@ jobs:
   terraform_apply:
     name: Terraform Apply
     runs-on: ubuntu-latest
+    needs: terraform_plan
     env:
       TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
       TF_VAR_web_bucket: ${{ secrets.WEB_BUCKET }}
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       
     steps:
     # Checkout the repository to the GitHub Actions runner
