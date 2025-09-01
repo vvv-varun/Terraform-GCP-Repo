@@ -15,5 +15,5 @@ terraform {
 
 provider "google" {
   project     = var.project_id
-  credentials = var.gcp_svc_key
+  #credentials = var.gcp_svc_key
 }
