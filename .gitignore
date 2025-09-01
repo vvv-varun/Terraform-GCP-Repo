@@ -40,4 +40,4 @@ terraform.rc
 mykey.json
 
 # Ignore static web content
-.website/
+website/
