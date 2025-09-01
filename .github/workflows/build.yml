@@ -12,6 +12,7 @@ jobs:
     env:
       TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
       TF_VAR_web_bucket: ${{ secrets.WEB_BUCKET }}
+
     if: github.event_name == 'pull_request'
 
     steps:
