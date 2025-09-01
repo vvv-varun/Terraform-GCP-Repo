@@ -29,11 +29,11 @@ resource "google_compute_region_autoscaler" "main" {
   region = var.region
   autoscaling_policy {
     max_replicas    = 10
-    min_replicas    = 0
+    min_replicas    = 1
     cooldown_period = 60
     cpu_utilization {
       predictive_method = "NONE"
-      target            = 0.6
+      target            = 0.8
     }
   }
 }
