@@ -50,7 +50,7 @@ jobs:
     env:
       TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
       TF_VAR_web_bucket: ${{ secrets.WEB_BUCKET }}
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
       
     steps:
     # Checkout the repository to the GitHub Actions runner
@@ -61,4 +61,6 @@ jobs:
       uses: 'google-github-actions/auth@v3'
       with:
         credentials_json: ${{ secrets.GCP_CREDENTIALS }}
-        run: echo "This is the output of Apply here"
+        
+    - name: Echo verify
+      run: echo "This is the output of Apply here"
