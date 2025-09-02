@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = "vvv-backend"
+    #bucket = "vvv-backend"
     prefix = "prod/state"
     #credentials = "mykey.json"
   }
